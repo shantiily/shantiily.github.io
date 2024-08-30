@@ -118,18 +118,19 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .single-image-project img {
-            width: 100%; /* Ensures the image covers the width of the container */
-            height: auto; /* Maintains the aspect ratio of the image */
-            object-fit: cover; /* Ensures the image covers the container without distortion */
-        }
+        .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Make sure it takes full height of the carousel */
+}
 
+.single-image-project img {
+    width: 100%; /* Ensures the image covers the width of the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
 
-        .carousel-item img {
-            max-width: 50%;
-            object-fit: cover;
-            height: 100%;
-        }
 
         .carousel-description {
             width: 50%;
@@ -158,10 +159,17 @@
         }
 
         .contact-section {
-            padding: 50px 0;
-            background-color: var(--accent-color-2);
-            text-align: center;
-        }
+    background-color: var(--accent-color-1);
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Add top margin to align with hero section */
+    margin-bottom: 20px; /* Add bottom margin to create space */
+}
+
 
         .contact-box h2 {
             font-family: 'Merriweather', serif;
@@ -172,7 +180,7 @@
         }
 
         .contact-box {
-            background-color: var(--accent-color-1);
+            background-color: var(--accent-color-2);
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -301,45 +309,44 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container projects-box">
-            <h2>My Projects</h2>
-            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-flex">
-                            <img src="Article.png" class="d-block w-50" alt="Project 1">
-                            <div class="carousel-description d-flex align-items-center w-50">
-                                <h3 class="project-title">Media and Information Design Framework</h3>
-                                <p>Title: AI's Growing Influence: What It Means for Us<br><br>
-
-                                    Artificial Intelligence is rapidly changing the way we live and work. In healthcare, AI tools now diagnose diseases with high accuracy, improving patient outcomes. The financial industry uses AI to predict market trends and detect fraud, making transactions safer.<br><br>
-                                    
-                                    AI's convenience is evident in daily life, from personalized content recommendations to virtual assistants. However, its rise also brings concerns about job displacement and ethical issues.<br>
-                                    
-                                    Experts emphasize the importance of responsible AI use and preparing for the future through education and skill development. As AI continues to evolve, its potential to enhance our lives is immense—if managed wisely.</p>
-                            </div>
+<section class="projects" id="projects">
+    <div class="container projects-box">
+        <h2>My Projects</h2>
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Project 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex">
+                        <img src="Article.png" class="d-block w-50" alt="Project 1">
+                        <div class="carousel-description d-flex align-items-center w-50">
+                            <h3 class="project-title">Media and Information Design Framework</h3>
+                            <p>Title: AI's Growing Influence: What It Means for Us<br><br>
+                                Artificial Intelligence is rapidly changing the way we live and work. In healthcare, AI tools now diagnose diseases with high accuracy, improving patient outcomes. The financial industry uses AI to predict market trends and detect fraud, making transactions safer.<br><br>
+                                AI's convenience is evident in daily life, from personalized content recommendations to virtual assistants. However, its rise also brings concerns about job displacement and ethical issues.<br>
+                                Experts emphasize the importance of responsible AI use and preparing for the future through education and skill development. As AI continues to evolve, its potential to enhance our lives is immense—if managed wisely.</p>
                         </div>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="single-image-project">
-                            <div class="d-flex">
-                                <img src="Timeline of Media Exposure.png" class="d-block w-100" alt="Project 2">
-                            </div>
-                        </div>                                        
-                    </div>                                       
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <!-- Single Image Project -->
+                <div class="carousel-item">
+                    <div class="single-image-project">
+                        <img src="Timeline of Media Exposure.png" alt="Project 2">
+                    </div>
+                </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
+
+
     
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -388,7 +395,15 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carouselElement = document.querySelector('#projectCarousel');
+            var carousel = new bootstrap.Carousel(carouselElement);
+        });
+    </script>
+    
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
