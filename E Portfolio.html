@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{cursor: url(https://proxy.everskies.com/a/https://64.media.tumblr.com/077b666564e5820eddd3500ef5568f24/tumblr_inline_p8c0yrQo7U1rhwzwl_75sq.png
+            ), auto !important;} 
+
+        :root {
+            --primary-color: #588061; /* Green */
+            --secondary-color: #869F77; /* Light Green */
+            --accent-color-1: #FDE9EA; /* Soft Pink */
+            --accent-color-2: #F9E0DB; /* Light Pink */
+            --accent-color-3: #E785AC; /* Warm Pink */
+            --dark-color: #333; /* Dark Gray */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--accent-color-2);
+            color: var(--dark-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color-1) !important;
+        }
+
+        .nav-link {
+            color: var(--accent-color-1) !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color-3) !important;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            padding: 50px 0;
+            background-color: var(--accent-color-1);
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        .profile-section {
+            flex: 1;
+            text-align: center;
+            border-right: 2px solid var(--dark-color);
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            max-width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-content {
+            margin-top: 20px;
+            font-family: 'Merriweather', serif;
+            color: var(--dark-color);
+        }
+
+        .hero {
+            flex: 2;
+            background-color: var(--accent-color-2);
+            color: var(--dark-color);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20pt;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+
+        .projects {
+            padding: 70px 0;
+        }
+
+        .projects h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .projects-box {
+            background-color: var(--accent-color-1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .single-image-project img {
+            width: 100%; /* Ensures the image covers the width of the container */
+            height: auto; /* Maintains the aspect ratio of the image */
+            object-fit: cover; /* Ensures the image covers the container without distortion */
+        }
+
+
+        .carousel-item img {
+            max-width: 50%;
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .carousel-description {
+            width: 50%;
+            padding: 20px;
+            background-color: var(--accent-color-2);
+            color: var(--dark-color);
+            border-left: 2px solid var(--primary-color);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column; /* Aligns title and description vertically */
+            text-align: left;
+        }
+
+
+        .project-title {
+            font-size: 1.5rem; /* Adjust the font size as needed */
+            font-weight: bold; /* Makes the title bold */
+            margin-bottom: 10px; /* Adds space between the title and description */
+            color: var(--dark-color); /* Ensures the title uses the dark color */
+        }
+
+        .text-container {
+            width: 100%; /* Ensures the title and description take up the full width */
+        }
+
+        .contact-section {
+            padding: 50px 0;
+            background-color: var(--accent-color-2);
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .contact-box {
+            background-color: var(--accent-color-1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            border: 3px solid transparent;
+            border-image: url('https://img.icons8.com/ios/50/000000/leaf.png') 30 round;
+        }
+
+        .contact-description {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            color: var(--dark-color);
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-category {
+            flex: 1;
+            margin: 0 10px;
+            text-align: left;
+        }
+
+        .contact-category p {
+            font-family: 'Merriweather', serif;
+            color: var(--dark-color);
+        }
+
+        .contact-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-divider {
+            border: none;
+            border-top: 2px solid var(--dark-color); 
+            margin: 20px 0; 
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--accent-color-1);
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+
+        .footer-menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-menu a {
+            color: var(--accent-color-1);
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-menu a:hover {
+            color: var(--accent-color-3);
+            text-decoration: underline;
+        }
+
+        .footer-area {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-area p {
+            margin-bottom: 0;
+        }
+
+    
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <img src="https://proxy.everskies.com/a/https%3A%2F%2F64.media.tumblr.com%2F748ac42939abde34d12aad9c0355d077%2F7cf915f60095705b-6d%2Fs75x75_c1%2Fdf1c48833239c1f6af811f6d00e0c512db27fa8b.gifv" alt="df1c48833239c1f6af811f6d00e0c512db27fa8b.gifv"/>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- Hero and Profile Section -->
+    <section class="hero-container">
+        <div class="profile-section">
+            <img src="Grad Pic.jpg" alt="Profile Image" class="profile-image">
+            <div class="profile-content">
+                <h2>Om Shanti Limpin</h2>
+                <p>Grade and Section: STEM 12 C</p>
+            </div>
+        </div>
+        <div class="hero">
+            <h1>Media and Literacy Portfolio</h1>
+            <p>This portfolio website serves to showcase my skills, talents, and journey throughout the Media and Information Literacy (MIL) subject. It is designed to provide a comprehensive overview of my projects and achievements, reflecting my growth and proficiency in media communication and digital literacy. By exploring this portfolio, visitors can gain insight into my work and the evolution of my expertise in the field.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container projects-box">
+            <h2>My Projects</h2>
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex">
+                            <img src="Article.png" class="d-block w-50" alt="Project 1">
+                            <div class="carousel-description d-flex align-items-center w-50">
+                                <h3 class="project-title">Media and Information Design Framework</h3>
+                                <p>Title: AI's Growing Influence: What It Means for Us<br><br>
+
+                                    Artificial Intelligence is rapidly changing the way we live and work. In healthcare, AI tools now diagnose diseases with high accuracy, improving patient outcomes. The financial industry uses AI to predict market trends and detect fraud, making transactions safer.<br><br>
+                                    
+                                    AI's convenience is evident in daily life, from personalized content recommendations to virtual assistants. However, its rise also brings concerns about job displacement and ethical issues.<br>
+                                    
+                                    Experts emphasize the importance of responsible AI use and preparing for the future through education and skill development. As AI continues to evolve, its potential to enhance our lives is immense—if managed wisely.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="single-image-project">
+                            <div class="d-flex">
+                                <img src="Timeline of Media Exposure.png" class="d-block w-100" alt="Project 2">
+                            </div>
+                        </div>                                        
+                    </div>                                       
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            
+            <div class="contact-box">
+                <h2>Contact Me</h2>
+                <p class="contact-description">If you have any questions or need any general information, please don't hesitate to reach out through one of the social media or e-mail.</p>
+                <hr class="contact-divider">
+                <div class="contact-details">
+                    <div class="contact-category">
+                        <p><strong>General Inquiries:</strong><br>
+                           Om Shanti Limpin<br>
+                           STEM 12 C<br>
+                           Student
+                        </p>
+                    </div>
+                    <div class="contact-category">
+                        <p><strong>Social Media:</strong><br>
+                           <a href="mailto:omshanti.limpin@iloilonhs.edu.ph">Email: omshanti.limpin@iloilonhs.edu.ph</a><br>
+                           <a href="https://m.me/achuchulovesspeky" target="_blank">Messenger: m.me/achuchulovesspeky</a><br>
+                           <a href="https://www.facebook.com/achuchulovesspeky?mibextid=ZbWKwL" target="_blank">Facebook: achuchulovesspeky</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-menu">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-area">
+                <p>&copy; 2024 My Portfolio | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
